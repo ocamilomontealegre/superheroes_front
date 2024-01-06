@@ -41,6 +41,54 @@
   color: #888;
 }
 
-.container {
-    
+/* Main container */
+.sh-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 300px;
+    height: 400px;
+    padding: 1rem;
+    border-radius: 25px;
+    background-color: rgba(250, 128, 114, .4);
+}
+
+/* Superhero header container */
+.sh-header {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  gap: 5px;
+  max-width: 80%;
+}
+
+/* Superhero image */
+.sh-image {
+  min-width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+/* Superhero name */
+.sh-title {
+  margin: 0;
+}
+
+/* Superhero powers */
+.sh-powers {
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+}
+
+.sh-powers li {
+  display: block;
+  width: 50%;
+  text-align: start;
+}
+
+/* Superhero description */
+.sh-description {
+  max-width: 100%;
 }
