@@ -3,7 +3,7 @@ import SuperheroName from './SuperheroName.jsx';
 import SuperheroPowers from './SuperheroPowers.jsx';
 import SuperheroDescription from './SuperheroDescription.jsx';
 
-const Container = () => {
+const SuperheroContainer = () => {
   return(
     <div className='sh-container'>
       <div className='sh-header'>
@@ -18,4 +18,4 @@ const Container = () => {
   )
 };
 
-export default Container;
+export default SuperheroContainer;

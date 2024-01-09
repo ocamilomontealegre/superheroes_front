@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getSuperheroPicture } from "../services/services.js";
+import { getSuperheroPicture } from "../../services/services.js";
 
 const SuperheroImage = ({ superheroAlias = 'All Might' }) => {
 

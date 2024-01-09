@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import Container from './components/Container.jsx';
+import SuperheroContainer from './components/superhero_components/SuperheroContainer.jsx';
 import './App.css'
 
 const App = () => {
   return (
-    <Container />
+    <SuperheroContainer />
   )
 }
 
