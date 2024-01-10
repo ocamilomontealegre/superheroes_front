@@ -1,21 +1,21 @@
 import { useState, useEffect } from "react";
 import { getSuperheroPicture } from "../../services/services.js";
 
-const SuperheroImage = ({ superheroAlias = 'All Might' }) => {
+const SuperheroImage = ({ alias }) => {
 
   const [ superheroPicture, setSuperheroPicture ] = useState('');
   
   useEffect(() => {
-    getSuperheroPicture(superheroAlias)
+    getSuperheroPicture(alias)
       .then((response) => setSuperheroPicture(response))
       .catch((error) => console.error(error)
-  )}, []);
+  )}, [alias]);
 
   return(
     <img 
       className='sh-image'
       src={superheroPicture}
-      alt='Superhero'
+      alt={alias}
     ></img>
   )
 }

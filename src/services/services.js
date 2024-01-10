@@ -6,6 +6,12 @@ const getSuperheroPicture = async (superheroAlias) => {
   return response.data.pictureUrl;
 };
 
+const getSuperheroData = async (superheroAlias = 'Superman') => {
+  const response = await axios.get(`${baseUrl}${superheroAlias}`);
+  return response.data;
+}
+
 export {
-  getSuperheroPicture
+  getSuperheroPicture,
+  getSuperheroData
 };

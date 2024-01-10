@@ -1,18 +1,42 @@
+import { useEffect, useState } from 'react';
+import { getSuperheroData } from '../../services/services.js';
 import SuperheroImage from './SuperheroImage.jsx';
 import SuperheroName from './SuperheroName.jsx';
 import SuperheroPowers from './SuperheroPowers.jsx';
 import SuperheroDescription from './SuperheroDescription.jsx';
 
 const SuperheroContainer = () => {
+  const [ superheroData, setSuperheroData ] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getSuperheroData();
+        setSuperheroData({
+          alias: response.alias,
+          powers: response.powers,
+          description: response.description,
+          backgroundColor: response.color
+        })
+      } catch (err) {
+        throw new Error(err);
+      }  
+    }
+
+    fetchData();
+  }, [superheroData]);
+
+  const style = { backgroundColor: superheroData.backgroundColor };
+
   return(
-    <div className='sh-container'>
+    <div className='sh-container' style={style}>
       <div className='sh-header'>
-        <SuperheroImage />
-        <SuperheroName text='All Might' />
+        <SuperheroImage alias={superheroData.alias}/>
+        <SuperheroName text={superheroData.alias} />
       </div>
       <div className='sh-body'>
-        <SuperheroPowers listOfPowers={['Super Strength', 'Super Speed', 'One for All', 'Plus Ultra']}/>
-        <SuperheroDescription description='The Symbol of Peace, he&#39;s a towering figure with a chiseled physique that embodies strength and heroism' />
+        <SuperheroPowers listOfPowers={superheroData.powers}/>
+        <SuperheroDescription description={superheroData.description} />
       </div>
     </div>
   )

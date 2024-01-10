@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -44,7 +45,7 @@
 /* Main container */
 .sh-container {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     justify-content: space-evenly;
     align-items: center;
     max-width: 300px;
@@ -65,7 +66,7 @@
 
 /* Superhero image */
 .sh-image {
-  max-width: 150px;
+  width: 150px;
   height: 150px;
   border-radius: 50%;
 }
