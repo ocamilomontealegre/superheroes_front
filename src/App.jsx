@@ -6,6 +6,18 @@ import './App.css'
 
 const App = () => {
   const [ inputText, setInputText ] = useState('');
+  const [ superheroData, setSuperheroData ] = useState({});
+  
+  const fetchSuperheroData = () => {
+    getSuperheroData(inputText, true)
+      .then((response) => setSuperheroData({
+        alias: response.alias,
+        powers: response.powers,
+        description: response.description,
+        backgroundColor: response.color
+      }))
+      .catch((error) => console.error(error));
+  };
 
   const handleInputText = (event) => {
     setInputText(event.target.value);
@@ -13,8 +25,8 @@ const App = () => {
 
   return (
     <>
-      <FormMain onChange={handleInputText} value={inputText}/>
-      <SuperheroContainer alias={inputText} />
+      <FormMain onSubmit={fetchSuperheroData} onChange={handleInputText} value={inputText} />
+      <SuperheroContainer data={superheroData} />
     </>
   )
 }
