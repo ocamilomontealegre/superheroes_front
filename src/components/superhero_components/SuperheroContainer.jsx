@@ -5,13 +5,13 @@ import SuperheroName from './SuperheroName.jsx';
 import SuperheroPowers from './SuperheroPowers.jsx';
 import SuperheroDescription from './SuperheroDescription.jsx';
 
-const SuperheroContainer = () => {
+const SuperheroContainer = ({ alias }) => {
   const [ superheroData, setSuperheroData ] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getSuperheroData();
+        const response = await getSuperheroData(alias);
         setSuperheroData({
           alias: response.alias,
           powers: response.powers,

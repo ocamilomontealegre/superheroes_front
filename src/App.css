@@ -93,3 +93,8 @@
 .sh-description {
   max-width: 100%;
 }
+
+/* Form */
+.sh-form {
+  margin-bottom: 2rem;
+}
